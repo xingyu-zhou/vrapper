@@ -104,6 +104,7 @@ public class ExCommandOperation extends AbstractLinewiseOperation {
 			if (pattern.length() == 0) {
 				throw new CommandExecutionException("No search pattern given and no active search!");
 			}
+            pattern = pattern.replaceAll("\\\\<", "\\\\b").replaceAll("\\\\>", "\\\\b");
 		}
 
 		if (definition.length() <= patternEnd + 1) {
